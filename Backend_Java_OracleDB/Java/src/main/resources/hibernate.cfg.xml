@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory>
+  <!-- Connection Configurations -->
+  <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+  <property name="hibernate.connection.username">jobportaladmin</property>
+  <property name="hibernate.connection.password">jobportaladmin_jobportalpdb</property>
+  <property name="hibernate.connection.url">jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=172.17.0.1)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=jobportalpdb)))</property>
+  <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
+
+  <!-- Other Configurations -->
+  <property name="hibernate.hbm2ddl.auto">update</property>
+  <property name="show_sql">true</property>  
+  
+  <!-- ANNOTED CLASSES -->
+  <mapping class="com.jobportal.models.db.UserInfoDto"/>
+  <mapping class="com.jobportal.models.db.EmployerDetailsDto"/>
+  <mapping class="com.jobportal.models.db.JobseekerDetailsDto"/>
+  <mapping class="com.jobportal.models.db.JobPostDto"/>
+  <mapping class="com.jobportal.models.db.HelpTicketForListDto"/>
+  <mapping class="com.jobportal.models.db.HelpTicketDetailsDto"/>
+  <mapping class="com.jobportal.models.db.EmployerDetailsViewDto"/>
+  <mapping class="com.jobportal.models.db.ChatHistoryDto"/>
+  <mapping class="com.jobportal.models.db.JobseekerDetailsViewDto"/>
+  <mapping class="com.jobportal.models.db.JobseekerReportViewDto"/>
+  <mapping class="com.jobportal.models.db.EmployerReportViewDto"/>
+  <mapping class="com.jobportal.models.db.JobseekerApplicationViewDto"/>
+  <mapping class="com.jobportal.models.db.JobApplicationsDto"/>
+
+ </session-factory>
+</hibernate-configuration>
