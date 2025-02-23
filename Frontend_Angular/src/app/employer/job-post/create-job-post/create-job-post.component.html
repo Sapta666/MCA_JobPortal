@@ -1,0 +1,108 @@
+<div class="d-flex justify-content-center align-items-center h-100">    
+    <form  [formGroup]="formGroup" class="w-50 p-1 border border-secondary rounded">
+        <div class="fw-bold cm-h4 text-dark border-bottom border-secondary mb-3">
+            Create Job Post
+        </div>
+        <div class="row">
+            <div class="col-md-4 table-label">
+                Title
+            </div>
+            <div class="col-md-8 table-data">
+                <kendo-formfield>                    
+                    <kendo-textbox formControlName="topic">                        
+                    </kendo-textbox>
+                    <kendo-formerror *ngIf="formGroup.controls['topic']??['errors']??['required']">                        
+                        Topic is required.
+                    </kendo-formerror>
+                </kendo-formfield>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-4 table-label">
+                Description
+            </div>
+            <div class="col-md-8 table-data">
+                <kendo-textarea
+                    [rows]="10"
+                    formControlName="description">                        
+                </kendo-textarea>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-4 table-label">
+                Time Limit: 
+            </div>
+            <div class="col-md-4 table-data">
+                <kendo-datepicker
+                    title="Start Date"
+                    [format]="dateFormat"
+                    formControlName="job_start_date">                        
+                </kendo-datepicker>
+            </div>
+            <div class="col-md-4 table-data">
+                <kendo-datepicker
+                    title="End Date"
+                    [format]="dateFormat"
+                    formControlName="job_end_date">                        
+                </kendo-datepicker>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-4 table-label">
+                Select Industry
+            </div>
+            <div class="col-md-8 table-data">
+                <kendo-dropdownlist
+                    [data]="industryTypeItems"
+                    textField="name"
+                    valueField="id"
+                    [value]="industryTypeItems[0]"
+                    (valueChange)="onIndustryTypeChange($event)"
+                >                        
+                </kendo-dropdownlist>
+            </div>
+        </div>
+        <div class="row mt-2">       
+            <div class="col-md-4 table-label">
+                Select Job Type
+            </div>
+            <div class="col-md-8 table-data">
+                <kendo-dropdownlist
+                    [data]="jobTypeItems"
+                    textField="name"
+                    valueField="id"
+                    [value]="jobTypeItems[0]"
+                    (valueChange)="onJobTypeChange($event)">                        
+                </kendo-dropdownlist>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-4 table-label">
+                Has Pre Application Data
+            </div>
+            <div class="col-md-8 table-data">
+                <kendo-switch
+                    onLabel="Yes"
+                    offLabel="No"
+                    formControlName="chkhas_pre_application_data">                    
+                </kendo-switch>
+            </div>
+        </div>
+        <div class="mt-1 text-end">
+            <button
+                kendoButton
+                title="Cancel"
+                class="fs-6 px-5 bg-danger text-white"
+                (click)="onCancelClick()">                
+                Cancel
+            </button>
+            <button
+                kendoButton
+                title="Submit"
+                class="fs-6 px-5 bg-success text-white ms-2"
+                (click)="onSubmitClick()">                
+                Submit
+            </button>
+        </div>
+    </form>            
+</div>

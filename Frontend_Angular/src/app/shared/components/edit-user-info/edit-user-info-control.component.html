@@ -1,0 +1,186 @@
+<form [formGroup]="userFormGroup" class="w-50 my-3 mx-auto p-2 border border-primary rounded">    
+    <div class="border-bottom border-dark mb-3 fw-bold fs-5">
+        Personal Information
+    </div>
+    <div class="row">
+        <div class="col-md-4 cm-flex-middle table-label">
+            First Name:
+        </div>
+        <div class="col-md-8 cm-flex-middle table-data">
+            <kendo-formfield>
+                <kendo-textbox
+                    [readonly]="pForView"
+                    formControlName="f_name">                    
+                </kendo-textbox>
+                <kendo-formerror>                        
+                </kendo-formerror>
+            </kendo-formfield>
+        </div>
+    </div>
+    <div class="row mt-1">
+        <div class="col-md-4 cm-flex-middle table-label">
+            Last Name:
+        </div>
+        <div class="col-md-8 cm-flex-middle table-data">
+            <kendo-formfield>
+                <kendo-textbox
+                    [readonly]="pForView"
+                    formControlName="l_name">                    
+                </kendo-textbox>
+                <kendo-formerror>                        
+                </kendo-formerror>
+            </kendo-formfield>
+        </div>
+    </div>
+    <div class="row mt-1">
+        <div class="col-md-4 cm-flex-middle table-label">
+            Date Of Birth:
+        </div>
+        <div class="col-md-8 cm-flex-middle table-data">
+            <kendo-formfield>
+                <kendo-datepicker
+                    [readonly]="pForView"
+                    [format]="dateFormat"
+                    formControlName="dob">                        
+                </kendo-datepicker>
+            </kendo-formfield>
+        </div>
+    </div>
+    <div class="row mt-1">
+        <div class="col-md-4 cm-flex-middle table-label">
+            Gender:
+        </div>
+        <div class="col-md-8 cm-flex-middle table-data">
+            <kendo-formfield>
+                <kendo-dropdownlist
+                    [readonly]="pForView"
+                    [data]="genderItems"
+                    [value]="genderItems[0]"
+                    formControlName="gender">                        
+                </kendo-dropdownlist>
+            </kendo-formfield>
+        </div>
+    </div>
+    <div class="row mt-1">
+        <div class="col-md-4 cm-flex-middle table-label">
+            Email:
+        </div>
+        <div class="col-md-8 cm-flex-middle table-data">
+            <kendo-formfield>
+                <kendo-textbox
+                    [readonly]="pForView"
+                    formControlName="email_id">                    
+                </kendo-textbox>
+                <kendo-formerror>                        
+                </kendo-formerror>
+            </kendo-formfield>
+        </div>
+    </div>
+    <div class="row mt-1">
+        <div class="col-md-4 cm-flex-middle table-label">
+            Contact No:
+        </div>
+        <div class="col-md-8 cm-flex-middle table-data">
+            <kendo-formfield>
+                <input
+                    [readonly]="pForView"
+                    kendoTextBox
+                    formControlName="ph_no"
+                    type="number">                    
+                <kendo-formerror>                        
+                </kendo-formerror>
+            </kendo-formfield>
+        </div>
+    </div>
+    <div class="row mt-1">
+        <div class="col-md-4 cm-flex-middle table-label">
+            Address:
+        </div>
+        <div class="col-md-8 cm-flex-middle table-data">
+            <kendo-formfield>
+                <kendo-textbox
+                    [readonly]="pForView"                
+                    formControlName="address">                    
+                </kendo-textbox>
+                <kendo-formerror>                        
+                </kendo-formerror>
+            </kendo-formfield>
+        </div>
+    </div>
+    <div class="row mt-1">
+        <div class="col-md-4 cm-flex-middle table-label">
+            Address Line 2:
+        </div>
+        <div class="col-md-8 cm-flex-middle table-data">
+            <kendo-formfield>
+                <kendo-textbox
+                    [readonly]="pForView"
+                    formControlName="address_2">                    
+                </kendo-textbox>
+                <kendo-formerror>                        
+                </kendo-formerror>
+            </kendo-formfield>
+        </div>
+    </div>
+    <div class="row mt-1">
+        <div class="col-md-4 cm-flex-middle table-label">
+            Country:
+        </div>
+        <div class="col-md-8 cm-flex-middle table-data">
+            <kendo-formfield>
+                <kendo-textbox
+                    [readonly]="pForView"
+                    formControlName="country_code">                    
+                </kendo-textbox>
+                <kendo-formerror>                        
+                </kendo-formerror>
+            </kendo-formfield>
+        </div>
+    </div>
+    <div class="row mt-1">
+        <div class="col-md-4 cm-flex-middle table-label">
+            State:
+        </div>
+        <div class="col-md-8 cm-flex-middle table-data">
+            <kendo-formfield>
+                <kendo-textbox  
+                    [readonly]="pForView"
+                    formControlName="state_code"
+                >                    
+                </kendo-textbox>
+                <kendo-formerror>                        
+                </kendo-formerror>
+            </kendo-formfield>
+        </div>
+    </div>
+    <div class="row mt-1">
+        <div class="col-md-4 cm-flex-middle table-label">
+            City:
+        </div>
+        <div class="col-md-8 cm-flex-middle table-data">
+            <kendo-formfield>
+                <kendo-textbox
+                    [readonly]="pForView"
+                    formControlName="city">                    
+                </kendo-textbox>
+                <kendo-formerror>                        
+                </kendo-formerror>
+            </kendo-formfield>
+        </div>
+    </div>
+    <div class="row mt-1">
+        <div class="col-md-4 cm-flex-middle table-label">
+            Zip code:
+        </div>
+        <div class="col-md-8 cm-flex-middle table-data">
+            <kendo-formfield>
+                <kendo-textbox
+                    [readonly]="pForView"
+                    formControlName="zip">                    
+                </kendo-textbox>
+                <kendo-formerror>                        
+                </kendo-formerror>
+            </kendo-formfield>
+        </div>
+    </div>
+</form>

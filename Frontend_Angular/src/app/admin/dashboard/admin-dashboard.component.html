@@ -1,0 +1,54 @@
+<div class="row mx-0">
+    <div class="col-md-6">
+        <kendo-card class="w-100 bg-transparent border border-dark">
+            <kendo-card-header class="border-dark">
+                <span class="fw-bold">Basic Application Status</span>
+            </kendo-card-header>
+            <kendo-card-body>
+                <div class="row mx-0 mb-2">
+                    <div class="col-md-4 text-end">
+                        Total Employers:
+                    </div>
+                    <div class="col-md-8">
+                        {{basicStatus?.employer_count}}
+                    </div>
+                </div>
+                <div class="row mx-0 mb-2">
+                    <div class="col-md-4 text-end">
+                        Total Jobseekers:
+                    </div>
+                    <div class="col-md-8">
+                        {{basicStatus?.jobseeker_count}}
+                    </div>
+                </div>
+                <div class="row mx-0 mb-2">
+                    <div class="col-md-4 text-end">
+                        Total Help Tickets:
+                    </div>
+                    <div class="col-md-8">
+                        {{basicStatus?.help_ticket_count}}
+                    </div>
+                </div>
+                <div class="row mx-0 mb-2">
+                    <div class="col-md-4 text-end">
+                        Total Job Posts:
+                    </div>
+                    <div class="col-md-8">
+                        {{basicStatus?.job_post_count}}
+                    </div>
+                </div>
+                <div class="row mx-0 mb-2">
+                    <div class="col-md-4 text-end">
+                        Total Job Applications:
+                    </div>
+                    <div class="col-md-8">
+                        {{basicStatus?.job_application_count}}
+                    </div>
+                </div>
+            </kendo-card-body>
+        </kendo-card>
+    </div>
+    <div class="col-md-6">
+
+    </div>
+</div>

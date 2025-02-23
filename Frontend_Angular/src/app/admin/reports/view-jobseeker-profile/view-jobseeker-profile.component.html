@@ -1,0 +1,121 @@
+<div class="container-fluid">
+    <kendo-card>
+        <kendo-card-header>
+            <span class="fw-bold h5">
+                <button
+                    kendoButton
+                    iconClass="fa-solid fa-arrow-left"
+                    class="btn-submit mx-1"
+                    title="Go Back"
+                    (click)="onGoBackClick()">                    
+                </button>
+                {{jobseekerInfo.UserInfo.f_name+" "+jobseekerInfo.UserInfo.l_name}} Profile Info
+            </span>
+        </kendo-card-header>
+        <kendo-card-body [ngStyle]="{'height': totalHeight+'px'}" class="cm-overflow-y-scroll">
+            <!-- edit user info control -->
+            <app-edit-user-info-control
+                [pForView]="true"
+                #editUserInfoControl>                
+            </app-edit-user-info-control>
+
+            <form 
+                [formGroup]="jobseekerFormGroup" 
+                class="w-50 my-3 mx-auto p-2 border border-primary rounded">
+                <div class="border-top border-bottom border-dark my-3 fw-bold fs-5">
+                    Academic Information
+                </div>
+                <div class="row mt-1">
+                    <div class="col-md-4 cm-flex-middle table-label">
+                        School (secondary):
+                    </div>
+                    <div class="col-md-8 cm-flex-middle table-data">
+                        <kendo-formfield>
+                            <kendo-textbox
+                                [readonly]="true"
+                                formControlName="school">                    
+                            </kendo-textbox>
+                            <kendo-formerror>                        
+                            </kendo-formerror>
+                        </kendo-formfield>
+                    </div>
+                </div>   
+                <div class="row mt-1">
+                    <div class="col-md-4 cm-flex-middle table-label">
+                        School (higher secondary):
+                    </div>
+                    <div class="col-md-8 cm-flex-middle table-data">
+                        <kendo-formfield>
+                            <kendo-textbox
+                                [readonly]="true"
+                                formControlName="school_2">                    
+                            </kendo-textbox>
+                            <kendo-formerror>                        
+                            </kendo-formerror>
+                        </kendo-formfield>
+                    </div>
+                </div>   
+                <div class="row mt-1">
+                    <div class="col-md-4 cm-flex-middle table-label">
+                        Graduation:
+                    </div>
+                    <div class="col-md-8 cm-flex-middle table-data">
+                        <kendo-formfield>
+                            <kendo-textbox
+                                [readonly]="true"
+                                formControlName="graduation">                    
+                            </kendo-textbox>
+                            <kendo-formerror>                        
+                            </kendo-formerror>
+                        </kendo-formfield>
+                    </div>
+                </div>  
+                <div class="row mt-1">
+                    <div class="col-md-4 cm-flex-middle table-label">
+                        Masters:
+                    </div>
+                    <div class="col-md-8 cm-flex-middle table-data">
+                        <kendo-formfield>
+                            <kendo-textbox
+                                [readonly]="true"
+                                formControlName="masters">                    
+                            </kendo-textbox>
+                            <kendo-formerror>                        
+                            </kendo-formerror>
+                        </kendo-formfield>
+                    </div>
+                </div> 
+                <div class="row mt-1">
+                    <div class="col-md-4 cm-flex-middle table-label">
+                        Certifications:
+                    </div>
+                    <div class="col-md-8 cm-flex-middle table-data">
+                        <kendo-formfield>
+                            <kendo-textarea
+                                [readonly]="true"
+                                formControlName="certifications">                    
+                            </kendo-textarea>
+                            <kendo-formerror>                        
+                            </kendo-formerror>
+                        </kendo-formfield>
+                    </div>
+                </div> 
+                <div class="row mt-1">
+                    <div class="col-md-4 cm-flex-middle table-label">
+                        Brief Description About Yourself:
+                    </div>
+                    <div class="col-md-8 cm-flex-middle table-data">
+                        <kendo-formfield>
+                            <kendo-textarea
+                                [readonly]="true"
+                                formControlName="descr">                    
+                            </kendo-textarea>
+                            <kendo-formerror>                        
+                            </kendo-formerror>
+                        </kendo-formfield>
+                    </div>
+                </div>           
+            </form>
+        </kendo-card-body>       
+    </kendo-card>
+</div>

@@ -1,0 +1,29 @@
+.login-main-icon {
+    color: var(--light-dark);
+    font-size: 100px;
+}
+
+.ver-divider {
+    border-left: 2px solid var(--light-dark);
+
+    border-radius: 50%;
+}
+
+.login-input {
+    border: 0;
+}
+.login-input .k-inner-input {
+    box-shadow: none;
+}
+
+.table-label {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.table-data {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}

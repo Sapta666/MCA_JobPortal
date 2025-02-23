@@ -1,0 +1,38 @@
+<div class="container-fluid p-1">
+    <kendo-grid
+        [kendoGridBinding]="gridData"
+        [height]="gridHeight">       
+        <ng-template kendoGridToolbarTemplate>            
+            <span class="fw-bold">
+                <button
+                    kendoButton
+                    iconClass="fa-solid fa-arrow-left"
+                    class="mx-1 btn-submit"
+                    title="Go Back"
+                    (click)="onGoBackClick()">                    
+                </button>
+                Jobseeker Job Applications
+            </span>
+        </ng-template> 
+        <!-- <kendo-grid-command-column title="Action" [width]="80" class="text-center">
+            <ng-template kendoGridCellTemplate let-dataItem>    
+                <button
+                    kendoButton
+                    iconClass="fa-solid fa-arrow-right"
+                    title="Click to view help ticket"
+                    (click)="onManageHelpTicketClick(dataItem)">                    
+                </button>
+            </ng-template>            
+        </kendo-grid-command-column> -->
+        <kendo-grid-column field="topic" title="Topic" [width]="100">            
+        </kendo-grid-column>
+        <kendo-grid-column field="description" title="Job Description" [width]="100">            
+        </kendo-grid-column>
+        <kendo-grid-column field="industry_name" title="Industry" [width]="100">            
+        </kendo-grid-column>
+        <kendo-grid-column field="job_type" title="Job Type" [width]="100">            
+        </kendo-grid-column>
+        <kendo-grid-column field="job_app_num_dat" title="Applied On" [width]="100">            
+        </kendo-grid-column>
+    </kendo-grid>
+</div>

@@ -1,0 +1,31 @@
+/* input start */
+
+kendo-formfield {
+    width: 100%;
+}
+
+.cm-k-checkbox {
+    vertical-align: text-top!important;
+    border-radius: 50% !important;
+}
+
+
+/* input end */
+
+/* kendo-card start */
+
+kendo-card {
+    width: 100%!important;
+    background: none !important;
+    border-color: black !important;
+}
+
+kendo-card-header {
+    border-color: black !important;
+}
+
+kendo-card-footer {
+    border-color: black !important;
+}
+
+/* kendo-card end */

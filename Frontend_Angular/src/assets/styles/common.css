@@ -1,0 +1,124 @@
+:root {
+    --blue: #1e90ff;
+    --light-blue: #aed7ff;
+    --dark: #000000;
+    --light-dark: #575757;
+    --white: #ffffff;
+    --green: #00850b;
+    --orange: #ff8147;
+}
+
+/* Background Start */
+
+.cm-bg-white {
+    background-color: var(--white);
+}
+
+.login-bg {
+    background-color: var(--light-blue);
+}
+
+/* Background End */
+
+/* Font Start */
+
+.cm-text-light-dark {
+    color: var(--light-dark);
+}
+
+.cm-fs-40-px {
+    font-size: 40px;
+}
+
+.cm-font-link {
+    color: var(--blue);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.cm-h4 {
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--light-dark);
+}
+
+/* Font End */
+
+
+/* Buttons Start */
+
+.login-btn {
+    width: 100%;
+    font-size: 1.25rem;
+    background-color: var(--white);
+}
+
+.sign-up-btn {
+    display: inline-block;
+    font-size: 1.25rem;
+    background-color: var(--orange);
+}
+
+.btn-icon {
+    background: none;
+    border:none;
+}
+
+.btn-submit {
+    background-color: rgb(0, 99, 230);
+    color: white;
+}
+
+.btn-submit:hover {
+    background-color: rgb(1, 86, 197);
+    color: white;
+}
+
+.btn-cancel {
+    background-color: rgb(223, 0, 0);
+    color: white;
+}
+
+.btn-cancel:hover {
+    background-color: rgb(161, 0, 0);
+    color: white;
+}
+
+/* Buttons End */
+
+/* Border Start */
+
+.cm-border-light-dark {
+    border: 2px solid var(--light-dark) !important;
+}
+
+.cm-border-rad-1 {
+    border-radius: 2px;
+}
+
+/* Border End */
+
+/* Spacing Start */
+
+.cm-w-40 {
+    width: 40%;
+}
+.cm-w-30 {
+    width: 30%;
+}
+
+.cm-vh-20 {
+    height: 20vh;
+}
+
+.cm-flex-middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cm-overflow-y-scroll {
+    overflow-y: scroll;
+}
+
+/* Spacing End */

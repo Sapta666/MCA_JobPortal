@@ -1,0 +1,50 @@
+<div class="container-fluid p-1">
+    <kendo-grid
+        [kendoGridBinding]="gridData"
+        [height]="gridHeight">       
+        <ng-template kendoGridToolbarTemplate>            
+            <span class="fw-bold">
+                <button
+                    kendoButton
+                    iconClass="fa-solid fa-arrow-left"
+                    class="btn-submit me-1"
+                    title="Go Back"
+                    (click)="onGoBackClick()">                    
+                </button>
+                Employer Report
+            </span>
+        </ng-template> 
+        <kendo-grid-command-column title="Action" [width]="80" class="text-center">
+            <ng-template kendoGridCellTemplate let-dataItem>    
+                <button
+                    kendoButton
+                    iconClass="fa-solid fa-circle-info"
+                    title="View Employer Info"
+                    (click)="onViewEmployerInfoClick(dataItem)">                    
+                </button>
+                <button
+                    *ngIf="dataItem?.job_post_cnt > 0"
+                    kendoButton
+                    iconClass="fa-solid fa-briefcase"
+                    title="View Job Posts"
+                    (click)="onViewJobPostsClick(dataItem)">                    
+                </button>
+                <button
+                    *ngIf="dataItem?.hlp_tkt_cnt > 0"
+                    kendoButton
+                    iconClass="fa-solid fa-ticket"
+                    title="View Help Tickets"
+                    (click)="onViewHelpTicketsClick(dataItem)">                    
+                </button>
+            </ng-template>            
+        </kendo-grid-command-column>        
+        <kendo-grid-column field="organization_name" title="Employer Name" [width]="100">            
+        </kendo-grid-column>
+        <kendo-grid-column field="industry_name" title="Industry" [width]="100">            
+        </kendo-grid-column>
+        <kendo-grid-column field="job_post_cnt" title="Job Post Count" [width]="100" class="text-end">            
+        </kendo-grid-column>
+        <kendo-grid-column field="hlp_tkt_cnt" title="Help Ticket Count" [width]="100" class="text-end">            
+        </kendo-grid-column>        
+    </kendo-grid>
+</div>

@@ -1,0 +1,35 @@
+<div class="container-fluid p-1">
+    <kendo-grid
+        [kendoGridBinding]="gridData"
+        [height]="gridHeight">       
+        <ng-template kendoGridToolbarTemplate>            
+            <span class="fw-bold">
+                Jobseeker List
+            </span>
+        </ng-template> 
+        <kendo-grid-command-column title="Action" [width]="80" class="text-center">
+            <ng-template kendoGridCellTemplate let-dataItem>    
+                <button
+                    kendoButton
+                    iconClass="fa-solid fa-message"
+                    title="Click to message employer"
+                    (click)="onMessageEmployerClick(dataItem)">                    
+                </button>
+            </ng-template>            
+        </kendo-grid-command-column>        
+        <kendo-grid-column field="f_name" title="First Name" [width]="100">            
+        </kendo-grid-column>
+        <kendo-grid-column field="l_name" title="Last Name" [width]="100">            
+        </kendo-grid-column>
+        <kendo-grid-column field="school" title="School" [width]="100">            
+        </kendo-grid-column>
+        <kendo-grid-column field="school_2" title="School 2" [width]="100">            
+        </kendo-grid-column>
+        <kendo-grid-column field="graduation" title="Graduations" [width]="100">            
+        </kendo-grid-column>
+        <kendo-grid-column field="masters" title="Masters" [width]="100">            
+        </kendo-grid-column>
+        <kendo-grid-column field="descr" title="Description" [width]="100">            
+        </kendo-grid-column>
+    </kendo-grid>
+</div>

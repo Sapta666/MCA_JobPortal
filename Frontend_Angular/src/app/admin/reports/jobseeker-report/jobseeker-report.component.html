@@ -1,0 +1,60 @@
+<div class="container-fluid p-1">
+    <kendo-grid
+        [kendoGridBinding]="gridData"
+        [height]="gridHeight">       
+        <ng-template kendoGridToolbarTemplate>            
+            <span class="fw-bold">
+                <button
+                    kendoButton
+                    iconClass="fa-solid fa-arrow-left"
+                    class="btn-submit me-1"
+                    title="Go Back"
+                    (click)="onGoBackClick()">                    
+                </button>
+                Jobseeker Report
+            </span>
+        </ng-template> 
+        <kendo-grid-command-column title="Action" [width]="80" class="text-center">
+            <ng-template kendoGridCellTemplate let-dataItem>    
+                <button
+                    kendoButton
+                    iconClass="fa-solid fa-circle-info"
+                    title="View jobseeker info"
+                    (click)="onViewJobseekerInfoClick(dataItem)">                    
+                </button>
+                <button
+                    *ngIf="dataItem?.job_app_cnt > 0"
+                    kendoButton
+                    iconClass="fa-solid fa-user-tie"
+                    title="View Job Applications"
+                    (click)="onViewJobApplicationsClick(dataItem)">                    
+                </button>
+                <button
+                    *ngIf="dataItem?.hlp_tkt_cnt > 0"
+                    kendoButton
+                    iconClass="fa-solid fa-ticket"
+                    title="View Help Tickets"
+                    (click)="onViewHelpTicketsClick(dataItem)">                    
+                </button>
+            </ng-template>            
+        </kendo-grid-command-column>        
+        <kendo-grid-column field="f_name" title="First Name" [width]="100">            
+        </kendo-grid-column>
+        <kendo-grid-column field="f_name" title="Last Name" [width]="100">            
+        </kendo-grid-column>
+        <kendo-grid-column field="school" title="School" [width]="100">            
+        </kendo-grid-column>
+        <kendo-grid-column field="school_2" title="School 2" [width]="100">            
+        </kendo-grid-column>
+        <kendo-grid-column field="graduation" title="Graduations" [width]="100">            
+        </kendo-grid-column>
+        <kendo-grid-column field="masters" title="Masters" [width]="100">            
+        </kendo-grid-column>
+        <kendo-grid-column field="descr" title="Description" [width]="100">            
+        </kendo-grid-column>
+        <kendo-grid-column field="hlp_tkt_cnt" title="Help Ticket Count" [width]="100" class="text-end">            
+        </kendo-grid-column>
+        <kendo-grid-column field="job_app_cnt" title="Job Application Count" [width]="100" class="text-end">            
+        </kendo-grid-column>
+    </kendo-grid>
+</div>

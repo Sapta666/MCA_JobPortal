@@ -1,0 +1,23 @@
+<kendo-card>
+    <kendo-card-header class="fw-bold">
+        Select report type
+    </kendo-card-header>
+    <kendo-card-body>
+        <div class="d-flex align-items-center">
+            <button
+                kendoButton
+                title="Employee Report"
+                class="mx-1"
+                (click)="onEmployeeReportClick()">                    
+                Get Employee Report
+            </button>
+            <button
+                kendoButton
+                class="me-1"
+                title="Jobseeker Report"
+                (click)="onJobseekerReportClick()">                    
+                Get Jobseeker Report
+            </button>
+        </div>
+    </kendo-card-body>
+</kendo-card>

@@ -1,0 +1,37 @@
+<div class="cm-border-light-dark cm-border-rad-1">
+    <div class="cm-h4 text-center">
+        File Help Ticket
+    </div>
+    <div class="my-1 p-2" title="Help Ticket Message">
+        <span class="cm-text-light-dark">Enter Help Ticket Topic:</span><br>
+        <kendo-combobox
+            [data]="hlpTktMsgItems"
+            textField="topic"
+            valueField="topic_id"
+            [(ngModel)]="currentHlpTktMsg">            
+        </kendo-combobox>        
+    </div>
+    <div class="mb-1 px-2" title="Help Ticket Message">
+        <kendo-textarea                
+            [rows]="10"
+            [(ngModel)]="message"
+            placeholder="Help Ticket Message...">                
+        </kendo-textarea>
+    </div>
+    <div class="d-flex p-1">
+        <button 
+            kendoButton
+            class="btn-cancel fs-5 flex-fill"
+            title="Cancel"
+            (click)="onCancelClick()">
+            Cancel
+        </button>
+        <button 
+            kendoButton
+            class="btn-submit fs-5 flex-fill ms-1"
+            title="Submit Help Ticket"
+            (click)="onSubmitClick()">
+            Submit                
+        </button>
+    </div>
+</div>

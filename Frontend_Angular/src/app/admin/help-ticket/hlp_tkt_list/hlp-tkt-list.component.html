@@ -1,0 +1,31 @@
+<div class="container-fluid p-1">
+    <kendo-grid
+        [kendoGridBinding]="gridData"
+        [height]="gridHeight">       
+        <ng-template kendoGridToolbarTemplate>            
+            <span class="fw-bold">
+                Help Ticket List
+            </span>
+        </ng-template> 
+        <kendo-grid-command-column title="Action" [width]="80" class="text-center">
+            <ng-template kendoGridCellTemplate let-dataItem>    
+                <button
+                    kendoButton
+                    iconClass="fa-solid fa-arrow-right"
+                    title="Click to view help ticket"
+                    (click)="onManageHelpTicketClick(dataItem)">                    
+                </button>
+            </ng-template>            
+        </kendo-grid-command-column>
+        <kendo-grid-column field="topic" title="Topic" [width]="100">            
+        </kendo-grid-column>
+        <kendo-grid-column field="message" title="Message" [width]="100">            
+        </kendo-grid-column>
+        <kendo-grid-column field="f_name" title="First Name" [width]="100">            
+        </kendo-grid-column>
+        <kendo-grid-column field="l_name" title="Last Name" [width]="100">            
+        </kendo-grid-column>
+        <kendo-grid-column field="user_type" title="User Type" [width]="100">            
+        </kendo-grid-column>
+    </kendo-grid>
+</div>

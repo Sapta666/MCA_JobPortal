@@ -1,0 +1,31 @@
+<div class="login-bg vh-100">
+    <div class="row mx-0 border-bottom border-dark">
+        <div class="col-md-4 d-flex align-items-center fs-6 border-end border-dark">
+            Welcome: <span class="fw-bold">{{appSettings.f_name +' '+ appSettings.l_name}}</span>
+        </div>
+        <div class="col-md-6 d-flex align-items-center">
+            <span class="me-4">Menu:</span>
+            <div class="p-1 flex-fill" style="overflow-y: auto; white-space: nowrap;">
+                <button 
+                    *ngFor="let item of navigationItems"
+                    kendoButton 
+                    [title]="item.text" 
+                    class="ms-1" 
+                    (click)="onNavigationItemClick(item.id)"> 
+                    {{item.text}}                     
+                </button>  
+            </div>
+        </div>
+        <div class="col-md-2 d-flex justify-content-end align-items-center border-start border-dark">
+            <button
+                kendoButton
+                title="Logout"
+                (click)="onLogoutClick()">                
+                Logout
+            </button>
+        </div>
+    </div>
+    <div class="p-1">
+        <router-outlet></router-outlet>
+    </div>
+</div>

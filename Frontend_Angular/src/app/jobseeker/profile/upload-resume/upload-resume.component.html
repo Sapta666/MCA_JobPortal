@@ -1,0 +1,36 @@
+<div class="container-fluid p-1">
+    <kendo-card>
+        <kendo-card-header class="fw-bold h5">
+            Edit Your Resume
+        </kendo-card-header>
+        <kendo-card-body [ngStyle]="{'height': totalHeight+'px'}">
+            <div class="row mx-0">
+                <div class="col-md-4 table-label">
+                    Upload Resume:
+                </div>
+                <div class="col-md-5 table-data">
+                    <kendo-fileselect 
+                        [multiple]="false"
+                        (valueChange)="onFileSelectValueChange($event)">
+                    </kendo-fileselect>
+                </div>
+                <div class="col-md-3 d-flex align-items-center justify-content-center">
+                    <a id="download" *ngIf="showDownload">
+                        Download Uploaded Resume
+                    </a>
+                </div>
+            </div>
+            <div class="row mx-0 mt-2">
+                <div class="col-md-8 table-data offset-md-4">
+                    <button
+                        kendoButton
+                        class="btn-submit"
+                        title="Upload"
+                        (click)="onSubmitClick()">                    
+                        Upload
+                    </button>
+                </div>
+            </div>
+        </kendo-card-body>
+    </kendo-card>
+</div>

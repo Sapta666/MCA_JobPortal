@@ -1,0 +1,27 @@
+<div class="container-fluid p-1">
+    <kendo-grid
+        [kendoGridBinding]="gridData"
+        [height]="gridHeight">       
+        <ng-template kendoGridToolbarTemplate>            
+            <span class="fw-bold">
+                Job List
+            </span>
+        </ng-template> 
+        <!-- <kendo-grid-command-column title="Action" [width]="80" class="text-center">
+            <ng-template kendoGridCellTemplate let-dataItem>    
+                <button
+                    kendoButton
+                    iconClass="fa-solid fa-arrow-right"
+                    title="Click to see job post"
+                    (click)="onViewJobPostClick(dataItem)">                    
+                </button>
+            </ng-template>            
+        </kendo-grid-command-column> -->
+        <kendo-grid-column field="topic" title="Topic" [width]="100">            
+        </kendo-grid-column>
+        <kendo-grid-column field="job_type" title="Job Type" [width]="100">            
+        </kendo-grid-column>
+        <kendo-grid-column field="industry_name" title="Industry" [width]="100">            
+        </kendo-grid-column>
+    </kendo-grid>
+</div>

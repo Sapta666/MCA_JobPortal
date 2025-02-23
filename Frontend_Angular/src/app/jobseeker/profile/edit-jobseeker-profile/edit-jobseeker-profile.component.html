@@ -1,0 +1,129 @@
+<div class="container-fluid">
+    <kendo-card>
+        <kendo-card-header>
+            <span class="fw-bold h5">
+                Your Profile Info
+            </span>
+        </kendo-card-header>
+        <kendo-card-body [ngStyle]="{'height': totalHeight+'px'}" class="cm-overflow-y-scroll">
+            <!-- edit user info control -->
+            <app-edit-user-info-control
+                #editUserInfoControl>                
+            </app-edit-user-info-control>
+
+            <form 
+                [formGroup]="jobseekerFormGroup" 
+                class="w-50 my-3 mx-auto p-2 border border-primary rounded">
+                <div class="border-top border-bottom border-dark my-3 fw-bold fs-5">
+                    Academic Information
+                </div>
+                <div class="row mt-1">
+                    <div class="col-md-4 cm-flex-middle table-label">
+                        School (secondary):
+                    </div>
+                    <div class="col-md-8 cm-flex-middle table-data">
+                        <kendo-formfield>
+                            <kendo-textbox
+                                formControlName="school"
+                            >                    
+                            </kendo-textbox>
+                            <kendo-formerror>                        
+                            </kendo-formerror>
+                        </kendo-formfield>
+                    </div>
+                </div>   
+                <div class="row mt-1">
+                    <div class="col-md-4 cm-flex-middle table-label">
+                        School (higher secondary):
+                    </div>
+                    <div class="col-md-8 cm-flex-middle table-data">
+                        <kendo-formfield>
+                            <kendo-textbox
+                                formControlName="school_2"
+                            >                    
+                            </kendo-textbox>
+                            <kendo-formerror>                        
+                            </kendo-formerror>
+                        </kendo-formfield>
+                    </div>
+                </div>   
+                <div class="row mt-1">
+                    <div class="col-md-4 cm-flex-middle table-label">
+                        Graduation:
+                    </div>
+                    <div class="col-md-8 cm-flex-middle table-data">
+                        <kendo-formfield>
+                            <kendo-textbox
+                                formControlName="graduation"
+                            >                    
+                            </kendo-textbox>
+                            <kendo-formerror>                        
+                            </kendo-formerror>
+                        </kendo-formfield>
+                    </div>
+                </div>  
+                <div class="row mt-1">
+                    <div class="col-md-4 cm-flex-middle table-label">
+                        Masters:
+                    </div>
+                    <div class="col-md-8 cm-flex-middle table-data">
+                        <kendo-formfield>
+                            <kendo-textbox
+                                formControlName="masters"
+                            >                    
+                            </kendo-textbox>
+                            <kendo-formerror>                        
+                            </kendo-formerror>
+                        </kendo-formfield>
+                    </div>
+                </div> 
+                <div class="row mt-1">
+                    <div class="col-md-4 cm-flex-middle table-label">
+                        Certifications:
+                    </div>
+                    <div class="col-md-8 cm-flex-middle table-data">
+                        <kendo-formfield>
+                            <kendo-textarea
+                                formControlName="certifications"
+                            >                    
+                            </kendo-textarea>
+                            <kendo-formerror>                        
+                            </kendo-formerror>
+                        </kendo-formfield>
+                    </div>
+                </div> 
+                <div class="row mt-1">
+                    <div class="col-md-4 cm-flex-middle table-label">
+                        Brief Description About Yourself:
+                    </div>
+                    <div class="col-md-8 cm-flex-middle table-data">
+                        <kendo-formfield>
+                            <kendo-textarea
+                                formControlName="descr"
+                            >                    
+                            </kendo-textarea>
+                            <kendo-formerror>                        
+                            </kendo-formerror>
+                        </kendo-formfield>
+                    </div>
+                </div>           
+            </form>
+        </kendo-card-body>
+        <kendo-card-footer class="text-end">
+            <button
+                kendoButton
+                title="Cancel"
+                class="btn-cancel me-2"
+                (click)="onCancelClick()">                
+                Cancel
+            </button>
+            <button
+                kendoButton
+                title="Submit"
+                class="btn-submit"
+                (click)="onSubmitClick()">                
+                Submit
+            </button>
+        </kendo-card-footer>
+    </kendo-card>
+</div>

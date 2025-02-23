@@ -1,0 +1,122 @@
+<router-outlet></router-outlet>
+<div class="d-flex login-bg justify-content-center align-items-center vh-100">
+
+    <div class="cm-w-30 p-1">
+        <div class="d-block fa-solid fa-user text-center login-main-icon mb-3"></div>
+        <p class="text-center cm-fs-40-px cm-text-light-dark">User Login</p>
+
+        <form [formGroup]="formGroup">        
+            <kendo-formfield>
+                <!-- user name input section -->
+                <div 
+                    class="d-flex align-items-center bg-white p-1 cm-border-rad-1" 
+                    title="Enter Username">
+                    <i class="fa-solid fa-user cm-text-light-dark ms-1"></i>
+                    <span class="ps-4 pe-1">
+                        <a class="ver-divider"></a>
+                    </span>
+                    <kendo-textbox 
+                        class="flex-fill login-input"
+                        placeholder="Username"
+                        formControlName="Username">                
+                    </kendo-textbox>
+                </div>
+                <kendo-formerror *ngIf="formGroup?.controls?.['Username']?.errors?.['required']">
+                    Username is required
+                </kendo-formerror>
+            </kendo-formfield>
+
+            <!-- user password input section -->
+            <kendo-formfield>
+                <div 
+                    class="d-flex align-items-center bg-white p-1 mt-1 cm-border-rad-1" 
+                    title="Enter Password">
+                    <i class="fa-solid fa-lock cm-text-light-dark ms-1"></i>
+                    <span class="ps-4 pe-1">
+                        <a class="ver-divider"></a>
+                    </span>
+                    <input 
+                        kendoTextBox
+                        type="password" 
+                        class="flex-fill login-input" 
+                        placeholder="Password"
+                        formControlName="Password">
+                </div>
+                <kendo-formerror *ngIf="formGroup?.controls?.['Password']?.errors?.['required']">
+                    Password is required
+                </kendo-formerror>
+            </kendo-formfield>
+
+            <!-- remember me & forget password section -->
+            <div class="row my-3">
+                <div class="col-md-4 d-flex align-items-center">
+                    <input 
+                        kendoCheckBox 
+                        type="checkbox" 
+                        class="cm-k-checkbox"
+                    />
+                    <span class="ms-2 cm-text-light-dark">
+                        Remeber Me ?
+                    </span>
+                </div>
+                <div class="col-md-4 text-center">
+                    <button 
+                        kendoButton
+                        title="Sign Up"
+                        class="sign-up-btn"
+                        (click)="onSignUpClick()"
+                        >
+                        Sign Up
+                    </button>
+                </div>
+                <div class="col-md-4 d-flex justify-content-end align-items-center fst-italic cm-font-link">
+                    Forgot Password
+                </div>
+            </div>
+
+            <!-- login button -->
+            <div>
+                <button 
+                    kendoButton
+                    title="Login"                    
+                    class="login-btn"
+                    (click)="onSubmitClick()">
+                    LOGIN                
+                </button>
+            </div>
+        </form>
+    </div>
+
+
+</div>
+
+<!-- user type dialog popup -->
+<kendo-dialog 
+    title="Select User Type" 
+    *ngIf="showUserTypePopup" 
+    (close)="onDialogClose()">
+    <div class="row">
+        <div class="col-6">
+            <button
+                kendoButton
+                title="Select User Type Jobseeker"
+                (click)="onUserTypeSelect(userTypeEnum.JOBSEEKER)"
+            >            
+                Jobseeker    
+            </button>
+        </div>
+        <div class="col-6">
+            <button
+                kendoButton
+                title="Select User Type Jobseeker"
+                (click)="onUserTypeSelect(userTypeEnum.EMPLOYER)"
+            >            
+                Employer
+            </button>
+        </div>
+    </div>
+    <kendo-dialog-actions>
+      <button kendoButton (click)="onDialogClose()">Cancel</button>
+      <button kendoButton (click)="onDialogClose()" themeColor="primary">Yes</button>
+    </kendo-dialog-actions>
+  </kendo-dialog>

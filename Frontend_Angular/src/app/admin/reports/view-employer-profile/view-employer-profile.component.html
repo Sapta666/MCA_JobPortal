@@ -1,0 +1,61 @@
+<div class="container-fluid">
+    <kendo-card>
+        <kendo-card-header>
+            <span class="fw-bold h5">
+                <button
+                    kendoButton
+                    iconClass="fa-solid fa-arrow-left"
+                    class="mx-1 btn-submit"
+                    title="Go Back"
+                    (click)="onGoBackClick()">                    
+                </button>
+                {{employerInfo.EmployerDetails.organization_name}} Profile Info
+            </span>
+        </kendo-card-header>
+        <kendo-card-body [ngStyle]="{'height': totalHeight+'px'}" class="cm-overflow-y-scroll">
+            <!-- edit user info control -->
+            <app-edit-user-info-control
+                #editUserInfoControl
+                [pForView]="true">                
+            </app-edit-user-info-control>
+
+            <!-- for employers -->
+        <form           
+            [formGroup]="employerFormGroup" 
+            class="w-50 my-3 mx-auto p-2 border border-primary rounded">
+            <div class="border-top border-bottom border-dark my-3 fw-bold fs-5">
+                Employer Information
+            </div>
+            <div class="row">
+                <div class="col-md-4 cm-flex-middle table-label">
+                    Organization Name:
+                </div>
+                <div class="col-md-8 cm-flex-middle table-data">
+                    <kendo-formfield>
+                        <kendo-textbox
+                            [readonly]="true"
+                            formControlName="organization_name">                    
+                        </kendo-textbox>
+                        <kendo-formerror>                        
+                        </kendo-formerror>
+                    </kendo-formfield>
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col-md-4 cm-flex-middle table-label">
+                    Industy Type:
+                </div>
+                <div class="col-md-8 cm-flex-middle table-data">
+                    <kendo-dropdownlist
+                        [readonly]="true"
+                        [data]="industryTypeItems"
+                        valueField="id"
+                        textField="name"
+                        [(value)]="industryTypeItem">                            
+                    </kendo-dropdownlist>       
+                </div>
+            </div>
+        </form>
+        </kendo-card-body>    
+    </kendo-card>
+</div>

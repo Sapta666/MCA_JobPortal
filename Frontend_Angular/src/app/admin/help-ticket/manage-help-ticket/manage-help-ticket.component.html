@@ -1,0 +1,65 @@
+<div class="container-fluid">
+    <kendo-card>
+        <kendo-card-header>
+            <div class="fw-bold">
+                <button
+                    kendoButton
+                    iconClass="fa-solid fa-arrow-left"
+                    title="Go Back to help ticket list page"
+                    (click)="onGoBackClick()">                    
+                </button>
+                Help Ticket (#{{helpTicketDetails.hlp_tkt_id}})
+            </div>
+        </kendo-card-header>
+        <kendo-card-body class="p-1">
+            <div class="border border-dark text-dark rounded">
+                <div class="row mx-0">
+                    <div class="col-md-4 table-label py-1">
+                        Help Ticket Topic: 
+                    </div>
+                    <div class="col-md-8 table-data">
+                        {{helpTicketDetails.topic}}
+                    </div>
+                </div>
+                <div class="row mx-0">
+                    <div class="col-md-4 table-label py-1">
+                        User id: 
+                    </div>
+                    <div class="col-md-8 table-data">
+                        {{helpTicketDetails.user_id}}
+                    </div>
+                </div>
+                <div class="row mx-0">
+                    <div class="col-md-4 table-label py-1">
+                        Help Ticket Message: 
+                    </div>
+                    <div class="col-md-8 table-data">
+                        {{helpTicketDetails.message}}
+                    </div>
+                </div>
+                <div class="row mx-0">
+                    <div class="col-md-4 table-label py-1">
+                        Reply Message: 
+                    </div>
+                    <div class="col-md-8 table-data">
+                        <kendo-textarea
+                            [disabled]="!!helpTicketDetails?.rply_message"
+                            [(ngModel)]="replyMessage">                            
+                        </kendo-textarea>
+                    </div>
+                </div>
+                <div class="row mx-0" *ngIf="!helpTicketDetails?.rply_message">
+                    <div class="col-md-12 text-center py-1">
+                        <button
+                            kendoButton
+                            title="Submit reply"
+                            class="btn-submit"
+                            (click)="onSubmitClick()">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </div>            
+        </kendo-card-body>
+    </kendo-card>
+</div>

@@ -1,0 +1,114 @@
+<div class="container-fluid">
+    <kendo-card class="h-100 w-75 mx-auto bg-transparent border-dark">
+        <kendo-card-header class="border-dark">
+            <button
+                kendoButton
+                iconClass="fa-solid fa-arrow-left"
+                title="Go Back"
+                (click)="onGoBackClick()">                
+            </button>
+            <span class="fw-bold ms-2 h5">
+                {{jobPostInfo.topic}}
+            </span>
+        </kendo-card-header>
+        <kendo-card-body 
+            [ngStyle]="{
+                'max-height': totalHeight+'px',
+                'min-height': (totalHeight - 400)+'px',
+            }">
+            <div class="h5 fw-bold border-bottom border-dark">
+                Job Info
+            </div>
+            <div class="row mx-0 mb-2">
+                <div class="col-4 text-end">
+                    Industry
+                </div>
+                <div class="col-8">
+                    {{jobPostInfo.industry_name}}
+                </div>
+            </div>
+            <div class="row mx-0 mb-2">
+                <div class="col-4 text-end">
+                    Job Type
+                </div>
+                <div class="col-8">
+                    {{jobPostInfo.job_type}}
+                </div>
+            </div>
+            <div class="row mx-0 mb-2">
+                <div class="col-4 text-end">
+                    Recruitment Start Date
+                </div>
+                <div class="col-8">
+                    {{jobPostInfo.job_start_num_date}}
+                </div>
+            </div>
+            <div class="row mx-0 mb-2">
+                <div class="col-4 text-end">
+                    Recruitment End Date
+                </div>
+                <div class="col-8">
+                    {{jobPostInfo.job_end_num_date}}
+                </div>
+            </div>
+            <div class="row mx-0 mb-2">
+                <div class="col-4 text-end">
+                    Employer Id
+                </div>
+                <div class="col-8">
+                    {{jobPostInfo.employer_id}}
+                </div>
+            </div>
+            <div class="h5 fw-bold border-bottom border-dark mb-2">
+                Job Description
+            </div>
+            <div class="row mx-0">
+                <div class="col-md-12">
+                    {{jobPostInfo.description}}
+                </div>
+            </div>
+        </kendo-card-body>
+        <kendo-card-footer class="text-end border-dark">
+            <button
+                kendoButton
+                title="Apply for job"
+                class="btn-submit"
+                (click)="onApplyToJobClick()">
+                Apply                
+            </button>
+        </kendo-card-footer>
+    </kendo-card>
+</div>
+
+<kendo-dialog
+    *ngIf="showPreApplicationDataPopup"
+    title="Pre Application Question"
+    [width]="400"
+    (close)="showPreApplicationDataPopup = false">
+    <div class="p-1">
+        <div class="my-2 h5">
+            {{jobPostInfo.pre_application_question}}
+        </div>
+        <div class="border border-dark p-1">
+            <kendo-textarea
+                class="w-100"
+                [rows]="4"
+                [(ngModel)]="pre_application_data">                
+            </kendo-textarea>
+        </div>
+    </div>
+    <kendo-dialog-actions>
+        <button 
+            kendoButton 
+            class="btn btn-danger"
+            (click)="showPreApplicationDataPopup = false">
+            Cancel
+        </button>
+        <button 
+            kendoButton 
+            class="btn btn-success"
+            (click)="onSubmitClick()">
+          Yes
+        </button>
+    </kendo-dialog-actions>
+</kendo-dialog>

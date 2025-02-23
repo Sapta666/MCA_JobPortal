@@ -1,0 +1,42 @@
+<div class="container-fluid p-1">
+    <kendo-card class="border border-dark">
+        <kendo-card-header class="fw-bold">
+            <button
+                kendoButton
+                iconClass="fa-solid fa-arrow-left"
+                class="btn-submit me-2"
+                title="Go Back"
+                (click)="onGoBackClick()">                
+            </button>
+            Chat with {{jobseekerInfo.UserInfo.f_name + " " + jobseekerInfo.UserInfo.l_name}}
+        </kendo-card-header>
+        <kendo-card-body id="cardBody" [ngStyle]="{'height': totalHeight + 'px'}">
+            <div class="row mx-0 mb-2" *ngFor="let item of gridData">
+                <div class="col-md-8 border border-dark rounded p-1" [ngClass]="{'offset-md-4': item.user_id == appSettings.user_id}">
+                    {{item.message}}
+                </div>
+            </div>
+        </kendo-card-body>
+        <kendo-card-footer class="p-1">
+            <div class="row mx-0 h-100">
+                <div class="col-md-11">
+                    <kendo-textarea
+                        [(ngModel)]="message"
+                        row="3"
+                        class="w-100 h-100 h6"
+                        resizable="none">                        
+                    </kendo-textarea>
+                </div>
+                <div class="col-md-1 d-flex justify-content-center align-items-center">
+                    <button
+                        kendoButton
+                        class="h5 text-white btn-submit px-4"
+                        title="Send Message"
+                        (click)="onSendMessageClick()">                        
+                        Send
+                    </button>
+                </div>
+            </div>
+        </kendo-card-footer>
+    </kendo-card>
+</div>
